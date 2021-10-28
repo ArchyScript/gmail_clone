@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gmail Clone</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+  <!-- Includes Styles -->
+      <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+
+  <div class="container d-lg-none d-xl-block">
+    <div class="row pt-4 pb-3 pl-5 g_b_b m_f_w s_d_t_c"> 
+      <div class="row col-3 col-sm-4 pl-2 pr-4 py-2 d-flex align-items-center">
+        <span class="px-2" id="menu_bar"> <i class="fas fa-bars fa__2x"></i> </span> 
+        <span class="px-2 d-flex justify-content-center align-items-center"> 
+          <img class="pr-2" id="gmail_logo" src="$home/$panel/Images/main_gmail_icon.jpeg" alt="Logo" style="width: 50px;">              
+          <span class="fa fa__2x"> Gmail </span> 
+        </span>   
+      </div>
+      
+      <div class="col-7 col-sm-4 d-flex justify- content-center align-items-center" id="input_search_container">
+        <div class="input-group rounded mx-3">
+          <span class="input-group-text border-0" id="search-addon">
+            <i class="fas fa-search"></i>
+          </span>
+          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        </div>
+      </div>
+      
+      <div class="col-2 col-sm-4 pl-3 ml-4 d-flex justify-content-around align-items-center">
+        <span class="px-2"> <a href="#"> <i class="fa fa-question-circle light-text fa__2x"></i> </a> </span>
+        <span class="px-2"> <a href="#"> <i class="fa fa-cog fa__2x"></i> </a> </span>
+        <span class="px-2"> <a href="#"> <i class="fa fa-th fa__2x"></i> </a> </span>
+        <span class="px-2"> <a href="#"> <img class="pr-2 rounded-circle" id="gmail_logo" src="$home/$panel/Images/IMG_20201231_162330_4.jpg" alt="Logo" style="width: 50px;"> </a> </span>
+      </div>
+    </div>
+    
+    <div class="row pt-4 pb-2 mb-5">
+      <div class="col-3"> 
+        <div class="py-3 g_b_b">
+          <div id="compose_message" class="btn p-3 w-75 rounded-pill d-flex justify-content-center align-items-center s_d_t_c" style="border: 1px solid var(--semi_dark_color);">
+            <span class="px-1"> <i class="fa fa-edit fa-2x">  </i> </span> 
+            <span class="px-1"> Compose </span>
+          </div>
+        </div>
+          
+        <div id="mail_label_nav_container" class="py-2 my-2 overflow-auto s_d_t_c s_f_w g_b_b">
+          <h6 class="m_f_w m-1 p-2 m_f_w mail_type_nav_header"> Mail </h6>
+          <div id="all_received_mail_label" class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link"> 
+            <span> <i class="fa fa-envelope pr-2"></i> All Mail </span>
+            <span id="total_mail_number_1"> <i class="fa fa-spin fa-spinner text-danger"></i> </span>
+          </div> 
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link" id="inbox_label_link"> 
+            <span> <i class="fa fa-inbox pr-2"></i> Inbox </span>
+            <span id="total_inbox_number"> <i class="fa fa-spin fa-spinner text-primary"></i> </span>
+          </div> 
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link" id="draft_label_link"> 
+            <span> <i class="fa fa-file pr-2"></i> Draft </span>
+            <span id="total_draft_number"> <i class="fa fa-spin fa-spinner text-secondary"></i> </span>
+          </div> 
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link" id="sent_label_link"> 
+            <span> <i class="fa fa-paper-plane pr-2"></i> Sent </span>
+            <span id="total_sent_number"> <i class="fa fa-spin fa-spinner text-danger"></i> </span>
+          </div> 
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link" id="outdoor_label_link"> 
+            <span> <i class="fab fa-telegram pr-2"></i> Outdoor </span>
+            <span id="total_outdoor_number"> <i class="fa fa-spin fa-spinner text-primary"></i> </span>
+          </div> 
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link" id="important_label_link"> 
+            <span> <i class="fa fa-check-square pr-2"></i> Important </span>
+            <span id="total_important_number"> <i class="fa fa-spin fa-spinner text-secondary"></i> </span>
+          </div> 
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link" id="secured_label_link"> 
+            <span> <i class="fa fa-lock pr-2"></i> Secured </span>
+            <span id="total_secured_number"> <i class="fa fa-spin fa-spinner text-danger"></i> </span>
+          </div> 
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link" id="favourite_label_link"> 
+            <span> <i class="fa fa-star pr-2"></i> Starred </span>
+            <span id="total_favourite_number"> <i class="fa fa-spin fa-spinner text-primary"></i> </span>
+          </div> 
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link" id="bookmarked_label_link"> 
+            <span> <i class="fa fa-bookmark pr-2"></i> Bookmarked </span>
+            <span id="total_bookmarked_number"> <i class="fa fa-spin fa-spinner text-secondary"></i> </span>
+          </div> 
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link" id="snoozed_label_link"> 
+            <span> <i class="fa fa-clock pr-2"></i> Snoozed </span>
+            <span id="total_snoozed_number"> <i class="fa fa-spin fa-spinner text-danger"></i> </span>
+          </div> 
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link" id="trash_label_link"> 
+            <span> <i class="fa fa-trash pr-2"></i> Trash </span>
+            <span id="total_trashed_number"> <i class="fa fa-spin fa-spinner text-primary"></i> </span>
+          </div> 
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link" id="spam_label_link"> 
+            <span> <i class="fa fa-exclamation-circle pr-2"></i> Spam </span>
+            <span id="total_spamed_number"> <i class="fa fa-spin fa-spinner text-secondary"></i> </span>
+          </div> 
+        </div>
+        
+        <div class="py-2 my-2 w-auto overflow-auto s_d_t_c s_f_w g_b_b">
+          <h6 class="m-1 p-2 m_f_w msg_type_nav_header"> Meet </h6>
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link"> 
+            <span> <i class="fa fa-video pr-2"></i> Start a Meeting </span>
+          </div> 
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center mail_label_link"> 
+            <span> <i class="fa fa-keyboard pr-2"></i> Join a Meeting </span>
+          </div> 
+        </div> 
+        
+        <div class="py-2 my-2 w-auto overflow-auto s_d_t_c s_f_w g_b_b">
+          <h6 class="m-1 p-2 m_f_w msg_type_nav_header"> Hangout </h6>
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center"> 
+            <span> <img class="rounded-circle px-1" src="$home/$panel/Images/IMG_20201231_162330_4.jpg" alt="Logo" style="width: 40px;"> Daniel <i class="fa fa-caret-down px-1"></i> </span>
+            <span class="message_amount"> <i class="fa fa-plus"></i> </span>
+          </div> 
+        </div>
+        
+        <div class="py-2 my-2 w-auto overflow-auto s_f_w s_d_t_c g_b_b">
+          <h6 class="m-1 p-2 m_f_w msg_type_nav_header"> Switch Mode </h6>
+          <div class="my-1 m_f_s py-2 px-3 rounded-pill d-flex justify-content-between align-items-center"> 
+            <span class="message_amount s_d_t_c"> Dark Mode </span>          
+            <div class="dark_mode_switch"> 
+              <input type="checkbox" name="dark_mode_switch" class="dark_mode_switch_checkbox" id="dark_mode_switch" tabindex="0">
+              <label class="dark_mode_switch_label" for="dark_mode_switch">
+                <span class="dark_mode_switch_inner"></span>
+                <span class="dark_mode_switch_switch"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-8 g_l_b">
+        <div class="g_b_b py-4 my-1 d-flex justify-content-between align-items-center m_f_w s_d_t_c">
+          <div class="d-flex justify-content-around align-items-center">
+            <span class="px-3"> <input type="checkbox" id="select_all_mail_checkbox"> <i class="fa fa-caret-down"> </i> </span>
+            <span class="px-3"> <i class="fa fa-undo"> </i> </span>
+            <span class="px-3"> <i class="fa fa-ellipsis-v"> </i> </span>
+          </div>
+            
+          <div class="pr-3 d-flex justify-content-around align-items-center">
+            <span class="px-3"> <span> 1-50 </span> <span class="px-1 m_f_s">of</span> <span id="total_mail_number_2"> <i class="fa fa-spin fa-spinner text-primary"></i> </span> </span> 
+            <span class="px-3"> <i class="fa fa-angle-left"> </i> </span>
+            <span class="px-3"> <i class="fa fa-angle-right"> </i> </span>
+            <span class="px-3"> <i class="fa fa-keyboard"> </i> <i class="fa fa-caret-down"> </i> </span>
+          </div>
+        </div>
+        
+        <div class="my-2"> 
+          <div class="row s_d_t_c s_f_w g_b_b">
+            <div class="col-3 mx-2 py-3 d-flex align-items-center mail_category_tab primary_mail" id="primary_category_link_tab">
+              <span class="px-2"> <i class="fa fa-envelope-open-text">  </i> </span>  
+              <span class="pl-2 m_f_w"> Primary </span>
+            </div>
+            
+            <div class="col-3 mx-2 py-3 d-flex align-items-center mail_category_tab social_mail" id="social_category_link_tab">
+              <span class="pr-1"> <i class="fa fa-users"> </i> </span>  
+              <div class="px-2"> 
+                <span class="d-flex align-items-center m_f_w"> Social <span class="badge bg-primary ml-1"> 27 new </span> </span> 
+                <span class="text-truncate d-inline-block m_f_s" style="max-width: 150px;"> Citonhub, Twitter, YouTube, Instagram </span>
+              </div> 
+            </div>  
+            
+            <div class="col-3 mx-2 py-3 d-flex align-items-center mail_category_tab promotion_mail" id="promotion_category_link_tab">
+              <span class="pr-1"> <i class="fa fa-tag"> </i> </span>  
+              <div class="px-2"> 
+                <span class="d-flex align-items-center m_f_w"> Promotions <span class="badge bg-success ml-1"> 27 new </span> </span> 
+                <span class="text-truncate d-inline-block m_f_s" style="max-width: 150px;"> Citonhub, Twitter, YouTube, Instagram </span>
+              </div> 
+            </div> 
+          </div> 
+          
+          <div class="py-2" id="received_mail_container"> 
+            <span class="my-5 d-flex justify-content-center align-items-center">
+              <i class="fa fa-spin fa-spinner fa-10x text-primary"></i> 
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div id="google_apps_container" class="col-1 g_l_b py-5 s_d_t_c">
+        <span class="d-block my-5 p-3"> <img src="$home/$panel/Images/google_calender.png"> </span>
+        <span class="d-block my-5 p-3"> <img src="$home/$panel/Images/google_classroom.jpeg"> </span>
+        <span class="d-block my-5 p-3"> <img src="$home/$panel/Images/google_hangout.jpeg"> </span>
+        <span class="d-block my-5 mx-2 p-3"> <i class="fa fa-plus fa-2x"></i> </span>
+      </div>
+    </div>    
+  </div>
+  
+  
+  <script src="script.js"></script>
+  <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script> 
+</body>
+</html>

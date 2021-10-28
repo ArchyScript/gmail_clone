@@ -1,0 +1,207 @@
+/**/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --very_light_color: #eee;
+  --semi_light_color: #bbb;
+  --very_dark_color: #111;
+  --semi_dark_color: #555;
+  
+  --red_color: darkred;
+  --blue_color: darkblue;
+  --green_color: darkgreen;
+  
+  --medium_font_size: .8rem;
+  --small_font_size: .6rem;
+  --medium_font_weight: 700;
+  --small_font_weight: 500;
+}
+
+/* body{
+  background: #c5c5c5;
+} */
+
+a { color: var(--semi_dark_color); }
+
+.container {
+  width: 1200px;
+  border: 1px solid grey;
+  margin: 1rem auto;
+  background: var(--very_light_color);
+}
+
+/* Small font size */
+.s_f_s { font-size: var(--small_font_size); }
+/* Medium font size */
+.m_f_s { outline: blue; font-size: var(--medium_font_size); }
+/* Small font weight */
+.s_f_w { font-weight: var(--small_font_weight); }
+/* Medium font weight */
+.m_f_w { font-weight: var(--medium_font_weight); }
+
+/* Very light text color */
+.v_l_t_c { color: var(--very_light_color); } 
+/* Semi light text color */
+.s_l_t_c { color: var(--semi_light_color); } 
+/* Very dark text color */
+.v_d_t_c { color: var(--very_dark_color); } 
+/* Semi dark text color */
+.s_d_t_c { color: var(--semi_dark_color); } 
+
+/* Grey bottom border */
+.g_b_b { border-bottom: 1px solid var(--semi_light_color); }
+/* Grey left border */
+.g_l_b { border-left: 1px solid var(--semi_light_color); }
+
+/*  */
+.fa__2x { font-size: 1.3rem; }
+
+/* Input Search container */
+#input_search_container > div { border: 2px solid  var(--semi_dark_color); }
+#input_search_container > div > input { border-left: 2px solid var(--semi_dark_color); }
+#input_search_container > div > span , #input_search_container > div > input {
+  background: var(--very_light_color);
+  color: var(--semi_dark_color);
+}
+
+/* Favourite message icon color */
+.favourite.checked_favourite { color: gold; }
+/* Bookmarked message icon color */
+.bookmarked.checked_bookmarked { color: purple; }
+
+/* Side nav links */
+#mail_label_nav_container { max-height: 350px; }
+/* Active mail type link */
+.mail_label_link.active {
+  background: #ffcccd;
+  color: var(--red_color);
+}
+
+
+.mail_category_tab.primary_mail.active {
+  color: var(--red_color);
+  border-bottom: 3px solid var(--red_color); 
+}
+.mail_category_tab.social_mail.active { 
+  color: var(--blue_color);
+  border-bottom: 3px solid var(--blue_color); 
+}
+.mail_category_tab.promotion_mail.active { 
+  color: var(--green_color);
+  border-bottom: 3px solid var(--green_color); 
+}
+/* Mail tab truncated text */
+.mail_category_tab span.text-truncate { max-width: 170px; }
+
+#received_mail_container {
+  height: 1800px;
+  max-height: 2000px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* Google apps container images */
+#google_apps_container span img { 
+  width: 40px; 
+  border: 2px solid var(--semi_dark_color); 
+  border-radius: 50%; 
+}
+
+
+
+
+/* Dark Mode Switch */
+/* .dark_mode_switch {
+  position: relative; 
+  width: 60px;
+  -webkit-user-select:none; 
+  -moz-user-select:none; 
+  -ms-user-select: none;
+} */
+
+.dark_mode_switch_checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dark_mode_switch_label {
+  display: block; 
+  overflow: hidden; 
+  cursor: pointer;
+  border: 2px solid #999999; 
+  border-radius: 20px;
+}
+
+.dark_mode_switch_inner {
+  display: block; 
+  width: 200%; 
+  margin-left: -100%;
+  transition: margin 0.2s ease-in 0s;
+}
+
+.dark_mode_switch_inner:before, .dark_mode_switch_inner:after {
+  display: block; 
+  float: left; 
+  width: 50%; 
+  height: 20px; 
+  padding: 0;
+  line-height: 20px;
+  font-size: 10px; 
+  color: white; 
+  font-family: Trebuchet, Arial, sans-serif; 
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.dark_mode_switch_inner:before {
+  content: "ON";
+  padding-left: 10px;
+  background-color: #34A7C1; 
+  color: #FFFFFF;
+}
+
+.dark_mode_switch_inner:after {
+  content: "OFF";
+  padding-right: 10px;
+  background-color: #EEEEEE;
+  color: #999999;
+  text-align: right;
+}
+
+.dark_mode_switch_switch {
+  display: block; 
+  width: 15px; 
+  height: 15px; 
+  margin: 4.5px;
+  background: #FFFFFF;
+  position: absolute; 
+  top: 0; 
+  bottom: 0;
+  right: 35px;
+  border: 2px solid #999999; 
+  border-radius: 50%;
+  transition: all 0.3s ease-in 0s; 
+}
+
+.dark_mode_switch_checkbox:checked + .dark_mode_switch_label .dark_mode_switch_inner {
+  margin-left: 0;
+}
+
+.dark_mode_switch_checkbox:checked + .dark_mode_switch_label .dark_mode_switch_switch {
+  right: 0px; 
+}
+
+
+
+/**/
